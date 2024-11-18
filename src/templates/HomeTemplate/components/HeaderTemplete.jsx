@@ -1,5 +1,5 @@
 
-// import Icon from '../../../components/icon'
+import Icon from '../../../components/Icon'
 import { Link, useNavigate } from 'react-router-dom'
 import { pathDefault } from '../../../common/path';
 import DropdownHeader from '../../../components/dropdown/DropdownHeader';
@@ -71,7 +71,7 @@ const HeaderTemplete = () => {
           <div className="flex flex-1 space-x-2 items-center">
             {/* logo */}
             <Link to={pathDefault.homePage}>
-              {/* <Icon.logo /> */}
+               <Icon.logo />
             </Link>
             {width > 576 && (
               <Dropdown

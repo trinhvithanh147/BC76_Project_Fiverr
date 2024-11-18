@@ -10,10 +10,9 @@ import {
 import { Button, Layout, Menu, theme } from "antd";
 import Sider from 'antd/es/layout/Sider';
 import { Content, Header } from 'antd/es/layout/layout';
-
+import Icon from "../../components/Icon";
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { pathDefault } from '../../common/path';
-import Icon from '../../components/Icon';
 
 const AdminTemplate = () => {
     const location = useLocation()
