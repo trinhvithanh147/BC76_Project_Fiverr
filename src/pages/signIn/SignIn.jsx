@@ -1,5 +1,5 @@
 
-import Icon from '../../components/icon'
+// import Icon from '../../components/icon'
 import { Link, useNavigate } from 'react-router-dom'
 import { pathDefault } from '../../common/path'
 import {ArrowLeftOutlined} from '@ant-design/icons'
@@ -70,7 +70,7 @@ const SignIn = () => {
       <div className="signIn_form h-full px-10 flex flex-col justify-between">
         {/* logo and back to homepage */}
         <div className="flex justify-between items-center">
-          <Icon.logo />
+          {/* <Icon.logo /> */}
           <Link to={pathDefault.homePage}>
             <ArrowLeftOutlined className="mr-2" />
             Go back
