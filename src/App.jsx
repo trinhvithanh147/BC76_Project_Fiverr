@@ -5,6 +5,9 @@ import { Bounce, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React, { createContext, Suspense } from "react";
 import AdminTemplate from "./templates/AdminTemplate/AdminTemplate";
+import ManagerDetailJob from "./pages/ManagerDetailJob/ManagerDetailJob";
+import DetailJob from "./templates/HomeTemplate/components/DetailJob";
+import DetailJobId from "./templates/HomeTemplate/components/DetailJobId";
 
 
 export const NotificationContext = createContext()
@@ -23,6 +26,14 @@ const ManagerUser = React.lazy(() => import("./pages/ManagerUser/ManagerUser"));
      element: <HomeTemplate />,
    },
    {
+     path: "detail/:slug",
+     element: <DetailJob />,
+   },
+   {
+     path: "detail/:slug/:id",
+     element: <DetailJobId />,
+   },
+   {
      path: pathDefault.signIn,
      element: <SignIn />,
    },
@@ -36,27 +47,31 @@ const ManagerUser = React.lazy(() => import("./pages/ManagerUser/ManagerUser"));
        },
        {
          path: "manager-user",
-         element: 
+         element: (
            <Suspense fallback={<div>Vui lòng chờ 1 chút</div>}>
              <ManagerUser />
            </Suspense>
-         
+         ),
        },
        {
          path: "manager-job",
-         element: 
+         element: (
            <Suspense fallback={<div>Vui lòng chờ 1 chút</div>}>
              <ManagerJob />
            </Suspense>
-         
+         ),
+       },
+       {
+         path: "manager-job/manager-detail-job/:id",
+         element: <ManagerDetailJob />,
        },
        {
          path: "manager-comment",
-         element: 
+         element: (
            <Suspense fallback={<div>Vui lòng chờ 1 chút</div>}>
              <ManagerComment />
            </Suspense>
-         ,
+         ),
        },
      ],
    },
@@ -77,6 +92,7 @@ function App() {
     });
     // toast.error || toast.success || toast.warning || toast.info
   }
+
   return (
     <>
       <NotificationContext.Provider value={handleNotification}>

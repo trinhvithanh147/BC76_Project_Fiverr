@@ -7,7 +7,8 @@ const HomeTemplate = () => {
   return (
     <>
       <HeaderTemplete />
-      <Outlet /> {/**Các trang con sẽ nằm ở đây */}
+      <Outlet /> 
+      
       <FooterTemplete />
     </>
   );
